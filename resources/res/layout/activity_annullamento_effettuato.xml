@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:gravity="center_horizontal"
+        style="@style/body">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/boxWelcome"
+            android:background="@drawable/rounded_box"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/accertamento_annullato"/>
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Annullamento Effettuato"
+                style="@style/text.label"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,444 @@
+package com.Foxit.AndJFPDFEMB;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+
+/*AndrJFPDFEMB.java
+ * JNI
+ * */
+public class AndrJFPDFEMB{
+	private AndrJFPDFEMB(){}
+
+	static final int pixelLength=4;
+
+	public final static int AndJFPDFEMB_RESULT_AndrError		=-1;
+	public final static int AndJFPDFEMB_RESULT_SUCCESS			=0;
+	public final static int AndJFPDFEMB_RESULT_MEMORY			=1;
+	public final static int AndJFPDFEMB_RESULT_ERROR			=2;
+	public final static int AndJFPDFEMB_RESULT_PASSWORD			=3;
+	public final static int AndJFPDFEMB_RESULT_FORMAT			=4;
+	public final static int AndJFPDFEMB_RESULT_FILE				=5;
+	public final static int AndJFPDFEMB_RESULT_PARAM			=6;
+	public final static int AndJFPDFEMB_RESULT_STATUS			=7;
+	public final static int AndJFPDFEMB_RESULT_TOBECONTINUED	=8;
+	public final static int AndJFPDFEMB_RESULT_NOTFOUND			=9;
+
+	public  final static int AndJFPDFEMB_CHARSET_DEFAULT		=0;
+	public  final static int AndJFPDFEMB_CHARSET_GB				=936;	//For simplified Chinese.
+	public  final static int AndJFPDFEMB_CHARSET_BIG5			=950;	//For traditional Chinese.
+	public  final static int AndJFPDFEMB_CHARSET_JIS			=932;
+	public  final static int AndJFPDFEMB_CHARSET_KOREA			=949;
+	public  final static int AndJFPDFEMB_CHARSET_UNICODE		=1200;
+
+	public  final static int AndJFPDFEMB_LINK_PAGE				=1;
+	public  final static int AndJFPDFEMB_LINK_URL				=3;
+
+	public  final static int AndJFPDFEMB_REFLOW_PARSE_IMAGE		=1;
+	public  final static int AndJFPDFEMB_REFLOW_PARSE_PAGEMODE	=4;
+
+	public  final static int AndJFPDFEMB_RENDERFLAG_ANNOT			=1;
+	public  final static int AndJFPDFEMB_RENDERFLAG_LCD_TEXT		=2;
+	public  final static int AndJFPDFEMB_RENDERFLAG_BGR_STRIPE		=4;
+	public  final static int AndJFPDFEMB_RENDERFLAG_DROP_OBJECTS	=8;
+
+	public static boolean LibHaveInit=false;
+	public static boolean DocumentHaveOPen=false;
+
+	static{
+	    System.loadLibrary("AndrJFPDFEMB");
+	}
+
+	//*
+	public class AndrJFPDFEMB_Point{
+		public int x;
+		public int y;
+	}
+
+	public class AndrJFPDFEMB_Rect{
+		public int left;
+		public int top;
+		public int right;
+		public int bottom;
+	}
+	//*///
+
+	//////////////////////////////////////////////////////////////////////////////////Parameter Data
+
+	public  static native void SetRenderStartX(int startX);
+
+	public  static native void SetRenderStartY(int startY);
+
+	public  static native void SetRenderSizeX(int sizeX);
+
+	public  static native void SetRenderSizeY(int sizeY);
+
+	public  static native void SetRenderRotate(int rotate);
+
+	public  static native int SetRenderFlags(int flags);
+
+
+	public  static native int  GetRenderStartX();
+
+	public  static native int  GetRenderStartY();
+
+	public  static native int  GetRenderSizeX();
+
+	public  static native int  GetRenderSizeY();
+
+	public  static native int  GetRenderRotate();
+
+	public  static native int  GetRenderFlags();
+
+	//////////////////////////////////////////////////////////////////////////////////Basic Operate
+
+	private  static native int  InitNativeLib(int libmemorysize);
+
+	///*
+	public  static int  InitJFPDFEMBLib(int libmemorysize){
+		if(!LibHaveInit){
+			int err=InitNativeLib(libmemorysize);
+			if(err==AndJFPDFEMB_RESULT_SUCCESS){
+				LibHaveInit=true;
+			}
+			return err;
+		}
+		else{
+			DestoryNativeLib();
+			int err=InitNativeLib(libmemorysize);
+			if(err==AndJFPDFEMB_RESULT_SUCCESS){
+				LibHaveInit=true;
+			}
+			return err;
+		}
+	}
+	//*///
+
+	private  static native void DestoryNativeLib();
+
+	public  static void DestoryJFPDFEMBLib(){
+		if(LibHaveInit){
+			DestoryNativeLib();
+			LibHaveInit=false;
+		}
+	}
+
+	public static int StartLoadDocument(String fileName,String password){
+		if(!DocumentHaveOPen){
+			 int err=nativeLoadDocument(fileName,password);
+			 if(err==AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS)
+				 DocumentHaveOPen=true;
+			 return err;
+		}
+		else if(CloseDocument()==AndJFPDFEMB_RESULT_SUCCESS){
+				int err=nativeLoadDocument(fileName,password);
+				 if(err==AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS)
+					 DocumentHaveOPen=true;
+				 return err;
+		}
+		return AndJFPDFEMB_RESULT_AndrError;
+	}
+	private  static native int  nativeLoadDocument(String fileName,String password);
+
+	//public native int  ContinueLoadDocument();
+
+	public  static int  CloseDocument(){
+		if(DocumentHaveOPen){
+			 int err=nativeCloseDocument();
+			 if(err==AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS)
+				 DocumentHaveOPen=false;
+			 return err;
+		}
+		return AndJFPDFEMB_RESULT_SUCCESS;
+	}
+
+	public  static native int  nativeCloseDocument();
+
+	public  static native int  LoadPage(int pageIndex);
+
+	public  static native int ClosePage();
+
+	public  static native int  StartParsePage();
+
+
+	public static native int StartQuickDraw();
+
+
+	public  static native int  StartRenderPage();
+
+	public static native int QuickDrawPartPage(int startX,int startY,int sizeX,int sizeY,int[] rgbData);
+
+	public  static native int  CreatDIB(int width,int height);
+
+	public  static native int  GetIntRGBData(int[] rgbData);
+
+	public  static native int  GetPixelColorInt(int posX, int posY);
+
+	private  static native int  GetDibBitmap(Bitmap bm);
+
+	//////////////////////////////////////////////////////////////////////////////////Get Customer Data
+	public  static native int  GetDibWidth();
+
+	public  static native int  GetDibHeight();
+
+	public  static native int  GetCurrentPageIndex();
+
+	public  static native int  GetPageCount();
+
+	public  static native byte[] GetDocInfo(String infoType);
+
+	//////////////////////////////////////////////////////////////////////////////////Andvance And Extra Operate
+
+	// int CanPrint(String PDFPath)
+	// 指定したPDFファイルが印刷可能かを取得
+	// 引数 PDFPath: PDFファイルパス
+	// 戻り値 0: 印刷不可、1: 印刷可能
+	public  static int  CanPrint(String PDFPath) {
+		int libMemSize=16*1024*1024;
+		if (InitJFPDFEMBLib(libMemSize) != AndJFPDFEMB_RESULT_SUCCESS)
+			return 0;
+
+		int aRet = 0;
+		int err=0;
+		err = StartLoadDocument(PDFPath, null);
+		if (err == AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			aRet = 1;
+			CloseDocument();
+		} else {
+			aRet = 0;
+		}
+
+		DestoryJFPDFEMBLib();
+
+		return aRet;
+	}
+
+	// int GetPageCount(String PDFPath)
+	// PDFファイルの総ページ数を取得
+	// 引数 PDFPath: PDFファイルパス
+	// 戻り値　総ページ数、失敗した場合は0
+	public  static int  GetPageCount(String PDFPath) {
+		int libMemSize=16*1024*1024;
+		if (InitJFPDFEMBLib(libMemSize) != AndJFPDFEMB_RESULT_SUCCESS)
+			return 0;
+
+		int aRet = 0;
+		int err=0;
+		err = StartLoadDocument(PDFPath, null);
+		if (err == AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			aRet = GetPageCount();
+			CloseDocument();
+		} else {
+			aRet = 0;
+		}
+
+		DestoryJFPDFEMBLib();
+
+		return aRet;
+	}
+
+	// int makeImage(String PDFPath, int page, int width, int height, String DstPath)
+	// PDFファイルの指定した1ページ分の画像を、指定した幅と高さで生成
+	// ・引数
+	//   PDFPath: PDFファイルパス
+	//   page: 印刷するページ
+	//   width: 作成する画像の幅
+	//   height:作成する画像の高さ
+	//   DstPath: 出力する画像ファイル
+	// ・戻り値
+	//   エラーコード
+	//   0: 成功
+	//   1: 初期化エラー
+	//   2: ページ数エラー
+	//   3: サイズエラー
+	//   4: DstPathエラー
+	//   5: レンダリングエラー
+	//   6: Dstファイル保存エラー
+	//   7: メモリ不足
+	//static int[] rgbData;
+	public  static int  makeImage(String PDFPath, int page, int width, int height, String DstPath) {
+		System.out.println("makeImage PDFPath: " + PDFPath);
+		System.out.println("makeImage page: " + page);
+		System.out.println("makeImage width: " + width);
+		System.out.println("makeImage height: " + height);
+		System.out.println("makeImage DstPath: " + DstPath);
+		if (PDFPath.length() == 0) {
+			System.out.println("makeImage 1");
+			return 1;
+		}
+		if (page < 0) {
+			System.out.println("makeImage 2");
+			return 2;
+		}
+		if (width == 0 || height == 0) {
+			System.out.println("makeImage 3");
+			return 3;
+		}
+		if (DstPath.length() == 0) {
+			System.out.println("makeImage 4");
+			return 4;
+		}
+		int stride = width;//(width + 3) / 4 * 4;
+		System.out.println("makeImage 5");
+
+		int libMemSize=16*1024*1024;
+		if (InitJFPDFEMBLib(libMemSize) != AndJFPDFEMB_RESULT_SUCCESS) {
+			return 1;
+		}
+		System.out.println("makeImage 6");
+
+		int aRet = 0;
+        int err = StartLoadDocument(PDFPath, null);
+		if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			System.out.println("makeImage StartLoadDocument err : " + err);
+			DestoryJFPDFEMBLib();
+			return 1;
+		}
+		System.out.println("makeImage 7");
+
+		int aPageMax = GetPageCount();
+		if (page >= aPageMax) {
+			CloseDocument();
+			DestoryJFPDFEMBLib();
+			return 2;
+		}
+		System.out.println("makeImage 8");
+
+		err = CreatDIB(stride, height);
+		if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			DestoryJFPDFEMBLib();
+			return 1;
+		}
+		System.out.println("makeImage 9");
+
+		err = LoadPage(page);
+		if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			CloseDocument();
+			DestoryJFPDFEMBLib();
+			return 2;
+		}
+		System.out.println("makeImage 10");
+/*
+		err=AndrJFPDFEMB.StartParsePage();
+		if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			ClosePage();
+			CloseDocument();
+			DestoryJFPDFEMBLib();
+			return 5;
+		}
+*/
+		// レンダリングサイズ調整
+		int aTW, aTH, aTX, aTY;
+		int aPdfW = GetRenderSizeX();
+		int aPdfH = GetRenderSizeY();
+		int aRotate = 0;
+
+		if (aPdfW > aPdfH) {
+			if (width < height) {
+				aRotate = 1;
+			}
+		} else {
+			if (width > height) {
+				aRotate = 3;
+			}
+		}
+		if (aRotate != 0) {
+			int aTemp = aPdfW;
+			aPdfW = aPdfH;
+			aPdfH = aTemp;
+		}
+		aTH = height;
+		aTW = (int)((double)height * (double)((double)aPdfW / (double)aPdfH));
+		if (aTW > width) {
+			aTW = width;
+			aTH = (int)((double)width * (double)((double)aPdfH / (double)aPdfW));
+			aTX = 0;
+			aTY = (height - aTH) / 2;
+		}
+		else {
+			aTY = 0;
+			aTX = (width - aTW) / 2;
+		}
+
+		SetRenderStartX(aTX);
+		SetRenderStartY(aTY);
+		SetRenderSizeX(aTW);
+		SetRenderSizeY(aTH);
+		SetRenderRotate(aRotate);
+		SetRenderFlags(AndJFPDFEMB_RENDERFLAG_ANNOT | AndJFPDFEMB_RENDERFLAG_DROP_OBJECTS);
+
+		err=AndrJFPDFEMB.StartRenderPage();
+		if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+			ClosePage();
+			CloseDocument();
+			DestoryJFPDFEMBLib();
+			return 5;
+		}
+		System.out.println("makeImage 11");
+
+		FileOutputStream fos = null;
+		try {
+			// ファイル確認
+			File dstFile = new File(DstPath);
+			if (dstFile.exists() == true) {
+				dstFile.delete();	//あれば消す
+			}
+			// ディレクトリを作る.
+			//dstFile.mkdirs();
+
+			fos = new FileOutputStream(dstFile);
+			//dataの出力
+			byte[] rgbDataWrite = new byte[stride * 3];
+			for(int aCtY = 0; aCtY < height; aCtY++){
+				int aDtCt = 0;
+				for(int aCtX = 0; aCtX < stride; aCtX++){
+					// ※ GetPixelColorIntはバグでBGRを返してくるため、Color.blue()が赤、Color.red()が青の値となる
+					int aRGB = GetPixelColorInt(aCtX, aCtY);
+					rgbDataWrite[aDtCt++] = (byte)Color.blue(aRGB);
+					rgbDataWrite[aDtCt++] = (byte)Color.green(aRGB);
+					rgbDataWrite[aDtCt++] = (byte)Color.red(aRGB);
+				//	if (Color.red(aRGB) != 0xFF) {
+				//		System.out.println(Color.red(aRGB) + "," + Color.green(aRGB) + "," + Color.blue(aRGB) + " / ");
+				//	}
+				}
+				//System.out.println("A");
+				fos.write(rgbDataWrite);
+				fos.flush();
+			}
+/*
+/////// DEBUG PNG書き出し //////
+int[] rgbData = new int[stride * height];
+err=GetIntRGBData(rgbData);
+if (err != AndrJFPDFEMB.AndJFPDFEMB_RESULT_SUCCESS) {
+	ClosePage();
+	CloseDocument();
+	DestoryJFPDFEMBLib();
+	return 5;
+}
+Bitmap aBmp = Bitmap.createBitmap(rgbData, 0, stride, width, height, Bitmap.Config.RGB_565);
+aBmp.compress(Bitmap.CompressFormat.PNG, 100, fos);
+/////// DEBUG PNG書き出し //////
+*/
+		}
+		catch( Exception e ) { // 例外が発生
+			System.out.println("makeImage err : " + e.getMessage());
+			aRet = 6;
+		}
+		if (fos != null) {
+			// 書き出しのストリームのクローズ
+			try {fos.close();}catch(Exception e){}
+		}
+		System.out.println("makeImage 12");
+
+		// 解放
+		ClosePage();
+		CloseDocument();
+		DestoryJFPDFEMBLib();
+
+		System.out.println("makeImage 成功");
+
+		return aRet;
+	}
+
+}

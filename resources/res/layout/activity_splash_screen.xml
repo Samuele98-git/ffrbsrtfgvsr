@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/splash"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        style="@style/body">
+        <TextView
+            android:textSize="@dimen/comuneTextSize"
+            android:textStyle="bold"
+            android:textColor="@color/bluScuro"
+            android:gravity="center_horizontal"
+            android:id="@+id/comuneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnTestStampaA4"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Stampa A4"/>
+        <RelativeLayout
+            android:id="@+id/login"
+            android:background="@drawable/login"
+            android:layout_width="318dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="106dp"/>
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/txtVersion"
+            android:background="@color/verdeAcido"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

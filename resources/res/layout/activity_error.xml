@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="@color/rosso"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/txtTitle"
+        android:padding="@dimen/item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uncaught error detected"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/txtSubtitle"
+        android:padding="@dimen/item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please show this screen to your admin"
+        android:layout_below="@+id/txtTitle"/>
+    <EditText
+        android:id="@+id/txtError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="false"
+        android:editable="false"
+        android:layout_above="@+id/btnClose"
+        android:layout_below="@+id/txtSubtitle"
+        android:textIsSelectable="true"/>
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/verdeAcido"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_box"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:text="Contestazione"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/body">
+        <RadioGroup
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:textColor="@android:color/black"
+                android:id="@+id/radioContestazioneSI"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contestazione immediata"/>
+            <RadioButton
+                android:textColor="@android:color/black"
+                android:id="@+id/radioContestazioneNO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Contestazione non possibile"/>
+        </RadioGroup>
+        <AutoCompleteTextView
+            android:gravity="left"
+            android:id="@+id/motivomcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin"
+            android:hint="Motivo mancata contestazione"
+            android:inputType="text"
+            style="@style/text.label"/>
+    </LinearLayout>
+</LinearLayout>

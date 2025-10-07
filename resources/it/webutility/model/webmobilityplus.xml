@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webmobilityplus>
+	<nazioni>
+		<id></id>
+		<nome></nome>
+		<codiceCF></codiceCF>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+	</nazioni>
+	<indirizzi>
+		<id></id>
+		<indirizzo></indirizzo>
+		<numero></numero>
+		<cap></cap>
+		<citta></citta>
+		<provincia></provincia>
+		<interno></interno>
+		<dominio></dominio>
+	</indirizzi>
+	<vie>
+		<codiceVia></codiceVia>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+	</vie>
+	<ente_rilascio>
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+	</ente_rilascio>
+
+
+	<tipo_documento>
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+	</tipo_documento>
+
+
+
+	<stato_verbale>
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+	</stato_verbale>
+
+
+	<tipo_proprieta>
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+	</tipo_proprieta>
+
+
+	<note_chiusura>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</note_chiusura>
+
+
+	<utenti_appl>
+
+		<id></id>
+		<username></username>
+		<password></password>
+		<nome></nome>
+		<cognome></cognome>
+		<indirizzo></indirizzo>
+		<email></email>
+		<telefono></telefono>
+		<cellulare></cellulare>
+		<attivo></attivo>
+		<tema></tema>
+		<su></su>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</utenti_appl>
+
+
+
+	<comuni>
+		<id></id>
+		<nome></nome>
+		<provincia></provincia>
+		<cap></cap>
+		<prefissoTel></prefissoTel>
+		<codiceIstat></codiceIstat>
+		<codiceCatastale></codiceCatastale>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+
+	</comuni>
+
+	<modelli>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</modelli>
+
+
+	<tipo_veicolo>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</tipo_veicolo>
+
+
+	<marche>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</marche>
+
+	<motivo_mc>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</motivo_mc>
+
+	<tipo_targa>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</tipo_targa>
+
+
+	<tipo_allegato>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</tipo_allegato>
+
+	<violazioni>
+
+		<id></id>
+		<infrazione></infrazione>
+		<id_verbale></id_verbale>
+		<dominio></dominio>
+
+	</violazioni>
+
+
+	<infrazioni>
+
+		<id></id>
+		<articolo></articolo>
+		<comma></comma>
+		<descrizione></descrizione>
+		<importo></importo>
+		<punti></punti>
+		<sanzione_accessoria_1></sanzione_accessoria_1>
+		<sanzione_accessoria_2></sanzione_accessoria_2>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</infrazioni>
+
+	<sanzioni_accessorie>
+
+		<id></id>
+		<descrizione></descrizione>
+		<dtm_modifica></dtm_modifica>
+		<flg_cancellato></flg_cancellato>
+		<dominio></dominio>
+
+	</sanzioni_accessorie>
+
+	<verbali>
+		<dominio></dominio>
+		<comune></comune>
+		<importo></importo>
+		<dataora_verbale></dataora_verbale>
+		<utente_accertatore></utente_accertatore>
+		<data_scadenza></data_scadenza>
+		<numero_documento></numero_documento>
+		<data_rilascio></data_rilascio>
+		<comune_rilascio></comune_rilascio>
+		<ente_rilascio></ente_rilascio>
+		<tipo_documento></tipo_documento>
+		<partita_iva></partita_iva>
+		<proprieta></proprieta>
+		<sesso></sesso>
+		<indirizzo_residenza></indirizzo_residenza>
+		<comune_nascita></comune_nascita>
+		<id></id>
+		<stato_verbale></stato_verbale>
+		<targa></targa>
+		<tipo_targa></tipo_targa>
+		<indirizzo></indirizzo>
+		<codiceVia></codiceVia>
+		<numero_civico></numero_civico>
+		<commento></commento>
+		<tipo_veicolo></tipo_veicolo>
+		<marca_veicolo></marca_veicolo>
+		<modello_veicolo></modello_veicolo>
+		<colore_veicolo></colore_veicolo>
+		<nazione_veicolo></nazione_veicolo>
+		<motivo_mc></motivo_mc>
+		<nota></nota>
+		<nota_precomp></nota_precomp>
+		<dichiarazione_trasgr></dichiarazione_trasgr>
+		<nome_trasgr></nome_trasgr>
+		<cognome_trasgr></cognome_trasgr>
+		<data_nascita></data_nascita>
+
+	</verbali>
+
+
+	<allegati_verbale>
+
+		<file_path></file_path>
+		<id></id>
+		<file></file>
+		<nome_file></nome_file>
+		<id_verbale></id_verbale>
+		<tipo_verbale></tipo_verbale>
+		<dominio></dominio>
+
+	</allegati_verbale>
+
+
+
+</webmobilityplus>
+
+
+

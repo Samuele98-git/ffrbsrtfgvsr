@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="@dimen/item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnEseguiVisura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esegui visura"/>
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtEmpty"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"
+            android:text="Non è stato possibile recuperare le informazioni sulla targa, riprovare in un secondo momento."/>
+        <TextView
+            android:textColor="@android:color/black"
+            android:id="@+id/txtRiepilogoTarga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="false"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="11"
+        style="@style/body">
+        <RelativeLayout
+            android:id="@+id/lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/scfoto"/>
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:id="@+id/scfoto"
+                android:background="@drawable/camera"
+                android:layout_centerInParent="true"
+                style="@style/icon"/>
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/backgroundscuro"
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Allega una o più foto"
+                android:layout_alignBaseline="@+id/relativeLayout"
+                android:layout_alignBottom="@+id/relativeLayout"
+                android:layout_centerHorizontal="true"
+                style="@style/text"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

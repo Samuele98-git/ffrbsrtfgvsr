@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:weightSum="15"
+        style="@style/body">
+        <ImageView
+            android:id="@+id/imageView2"
+            android:src="@drawable/stampa"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            style="@style/icon"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Design.TabLayout" parent="@style/Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+    <style name="banner" parent="">
+        <item name="android:orientation">0</item>
+        <item name="android:background">@color/grigioChiaro</item>
+        <item name="android:layout_width">-1</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+    <style name="banner.button" parent="@style/banner">
+        <item name="android:visibility">2</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+    <style name="icon" parent="">
+        <item name="android:orientation">0</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">150dp</item>
+    </style>
+    <style name="text" parent="">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/backgroundscuro</item>
+    </style>
+    <style name="text.banner" parent="@style/text">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">0x2</item>
+        <item name="android:layout_width">-2</item>
+        <item name="android:layout_height">-2</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="text.icon" parent="@style/text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">0x1</item>
+        <item name="android:layout_width">-2</item>
+        <item name="android:layout_height">-2</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:singleLine">false</item>
+    </style>
+    <style name="text.label" parent="@style/text">
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

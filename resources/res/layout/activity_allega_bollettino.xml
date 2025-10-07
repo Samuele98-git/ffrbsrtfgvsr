@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/verdeAcido"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounded_box"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Abbina bollettino"/>
+        <RelativeLayout
+            android:id="@+id/btnScansionaBollettino"
+            style="@style/icon">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:src="@drawable/scatto_matrix"
+                style="@style/icon"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/lblDatamatrix"
+            android:text="Acquisisci\10da\10fotocamera"
+            style="@style/text.icon"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin">
+        <EditText
+            android:id="@+id/txtCodiceBollettinoManuale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci manualmente il codice del bollettino"
+            android:layout_weight="0.7"
+            android:inputType="number"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:id="@+id/btnInserisci"
+            android:background="@color/verdeAcido"
+            android:padding="@dimen/item_margin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Inserisci"
+            android:layout_weight="0.3"
+            android:imeOptions="actionDone"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin">
+        <TextView
+            android:textStyle="bold"
+            android:padding="@dimen/item_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin"
+            android:text="Codice bollettino abbinato"/>
+        <TextView
+            android:id="@+id/txtDatiBollettino"
+            android:padding="@dimen/item_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin"
+            android:text="&lt; bollettino non abbinato &gt;"/>
+    </LinearLayout>
+    <Button
+        android:textColor="@android:color/white"
+        android:id="@+id/btnRimuovi"
+        android:background="@color/rosso"
+        android:padding="@dimen/item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:text="Rimuovi bollettino abbinato"
+        android:textAllCaps="false"/>
+</LinearLayout>

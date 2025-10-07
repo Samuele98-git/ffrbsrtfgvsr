@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/bianco"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/txtFiltraCom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Filtra le comunicazioni"
+        android:drawableLeft="@drawable/ico_cerca"
+        android:drawablePadding="10dp"/>
+    <ListView
+        android:id="@+id/lista_com_in_entrata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/grigio"
+        android:dividerHeight="2px"/>
+</LinearLayout>

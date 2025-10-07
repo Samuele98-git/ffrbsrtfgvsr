@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/verdeAcido"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_box"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Ordini di Servizio"/>
+    <DatePicker
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_v_margin"/>
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnAggiornaOrdini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_v_margin"
+        android:text="Aggiorna"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="@dimen/textSize"
+            android:textColor="@android:color/black"
+            android:gravity="top|left"
+            android:id="@+id/txtDescrizione"
+            android:background="@android:color/white"
+            android:padding="@dimen/item_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"/>
+    </ScrollView>
+</LinearLayout>

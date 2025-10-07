@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="12"
+        style="@style/body">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Configurazioni"
+                style="@style/text.title"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="12"
+            android:layout_weight="11">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/dominio"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Dominio"
+                        style="@style/text.label"/>
+                    <requestFocus/>
+                    <EditText
+                        android:id="@+id/serverip"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Server ip"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/serverport"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Server port"
+                        style="@style/text.label"/>
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="comune"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/codcomune"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Codice Comune"
+                        android:inputType="number"
+                        style="@style/text.label"/>
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Stampe"
+                        style="@style/text.title"/>
+                    <EditText
+                        android:id="@+id/terminipagam"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Termini per il Pagamento"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/pagamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Desc. Pagamento"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/titoloTolleranza"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Titolo Tolleranza"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/tollAvvisoLungo"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Toll. Avviso Lungo"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/tollAvvisoBreve"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Toll. Avviso Breve"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/intestazioneAzienda"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Intestazione Azienda"
+                        style="@style/text.label"/>
+                    <EditText
+                        android:id="@+id/indirizzoAzienda"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Indirizzo Azienda"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

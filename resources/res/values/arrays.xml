@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="categorie_patente">
+        <item />
+        <item>A</item>
+        <item>A1</item>
+        <item>A2</item>
+        <item>AM</item>
+        <item>B</item>
+        <item>B1</item>
+        <item>BE</item>
+        <item>C</item>
+        <item>C1</item>
+        <item>C1E</item>
+        <item>CE</item>
+        <item>D</item>
+        <item>D1</item>
+        <item>D1E</item>
+    </array>
+    <array name="colors">
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>violet</item>
+    </array>
+    <array name="documenti_ritiro">
+        <item />
+        <item>Patente di guida</item>
+        <item>Carta di Circolazione</item>
+        <item>Certificato di idoneità tecnica</item>
+    </array>
+    <array name="documenti_ritiro_id">
+        <item />
+        <item>P</item>
+        <item>CC</item>
+        <item>CI</item>
+    </array>
+    <array name="entries_list_preference">
+        <item>Alpha Option 01</item>
+        <item>Beta Option 02</item>
+        <item>Charlie Option 03</item>
+    </array>
+    <array name="entryvalues_list_preference">
+        <item>alpha</item>
+        <item>beta</item>
+        <item>charlie</item>
+    </array>
+    <array name="nazione">
+        <item>Italia</item>
+        <item>Estero generico</item>
+    </array>
+    <array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluto</item>
+    </array>
+    <array name="search_menuModes">
+        <item>Search Key</item>
+        <item>Menu Item</item>
+        <item>Type-To-Search</item>
+        <item>Disabled</item>
+    </array>
+    <array name="select_dialog_items">
+        <item>Command one</item>
+        <item>Command two</item>
+        <item>Command three</item>
+        <item>Command four</item>
+    </array>
+    <array name="select_dialog_items2">
+        <item>Map</item>
+        <item>Satellite</item>
+        <item>Traffic</item>
+        <item>Street view</item>
+    </array>
+    <array name="select_dialog_items3">
+        <item>Every Monday</item>
+        <item>Every Tuesday</item>
+        <item>Every Wednesday</item>
+        <item>Every Thursday</item>
+        <item>Every Friday</item>
+        <item>Every Saturday</item>
+        <item>Every Sunday</item>
+    </array>
+</resources>

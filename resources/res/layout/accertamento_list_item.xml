@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/bianco"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/personImage"
+        android:layout_width="@dimen/acc_image_size"
+        android:layout_height="@dimen/acc_image_size"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
+        android:textColor="@color/backgroundscuro"
+        android:id="@+id/personName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:text="riga 1"/>
+    <TextView
+        android:textSize="@dimen/textSize_small"
+        android:textColor="@color/backgroundscuro"
+        android:id="@+id/distanza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:text="riga 2"
+        android:layout_below="@+id/personName"/>
+    <TextView
+        android:textSize="@dimen/textSize_small"
+        android:textStyle="bold"
+        android:textColor="@color/backgroundscuro"
+        android:id="@+id/personSurname"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:text="riga 3"
+        android:layout_below="@+id/distanza"/>
+</RelativeLayout>

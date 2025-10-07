@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/body">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/verdeAcido"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounded_box"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Consultazione banche dati"/>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <RelativeLayout
+                android:id="@+id/btn_targa_ocr"
+                style="@style/icon">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:src="@drawable/read_ocr"
+                    style="@style/icon"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/lblDatamatrix"
+                android:text="Acquisisci\10da OCR"
+                style="@style/text.icon"/>
+        </LinearLayout>
+        <AutoCompleteTextView
+            android:id="@+id/txtTarga"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Targa"
+            android:singleLine="true"
+            style="@style/text.label"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnVisuraInterna"
+            android:background="@color/verdeAcido"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visura banche dati interne"
+            android:textAllCaps="false"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnVisuraEsterna"
+            android:background="@color/verdeAcido"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Visura banche dati esterne"
+            android:textAllCaps="false"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnVisuraTutte"
+            android:background="@color/verdeAcido"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Visura tutte le banche dati"
+            android:textAllCaps="false"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btnRisultatoInterna"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Banca dati interna"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/btnRisultatoEsterna"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Banca dati esterna"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <FrameLayout
+            android:orientation="horizontal"
+            android:id="@+id/fragmentContainer"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnVisuraTutte"
+            style="@style/body"/>
+    </LinearLayout>
+</LinearLayout>

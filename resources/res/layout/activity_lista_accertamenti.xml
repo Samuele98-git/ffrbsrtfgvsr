@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="12"
+        style="@style/body">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="@dimen/textSize_small"
+                android:id="@+id/cercatarga"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:hint="Targa, Num. verbale, Nome o Cognome"
+                android:layout_weight="8">
+                <requestFocus/>
+            </EditText>
+            <ImageButton
+                android:layout_gravity="center"
+                android:id="@+id/imageButton1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filtra_targa"
+                android:layout_weight="2"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/bianco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <ListView
+                android:id="@+id/personListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

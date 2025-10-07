@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="12"
+        style="@style/body">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="15"
+            android:layout_weight="8">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="scaduto non oltre 15 giorni"
+                android:layout_weight="1"
+                style="@style/text.icon"/>
+            <TextView
+                android:id="@+id/targa"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Targa"
+                android:layout_weight="2"
+                style="@style/text.label"/>
+            <TextView
+                android:id="@+id/dataemissione"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Data emissione"
+                android:layout_weight="2"
+                style="@style/text.label"/>
+            <TextView
+                android:id="@+id/datascadenza"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Data scadenza"
+                android:layout_weight="2"
+                style="@style/text.label"/>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
+                <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    style="@style/icon">
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:src="@drawable/stampa"
+                        style="@style/icon"/>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Stampa di cortesia"
+                    style="@style/text.icon"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"/>
+    </LinearLayout>
+</LinearLayout>

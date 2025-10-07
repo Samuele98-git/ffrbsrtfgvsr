@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/sfon2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/banner"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/verdeAcido"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/txtTitle"
+        android:background="@drawable/rounded_box"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:text="Titoli di sosta sulla targa"
+        android:layout_below="@+id/navigationBanner"/>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle">
+        <ListView
+            android:id="@+id/listTitoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#f5f5f5"
+            android:dividerHeight="1dp"
+            android:layout_above="@+id/btnConferma"
+            android:layout_alignParentTop="true"/>
+        <Button
+            android:id="@+id/btnConferma"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Procedi comunque all&apos;accertamento"
+            android:layout_above="@+id/btnStampaTolleranza"/>
+        <Button
+            android:id="@+id/btnStampaTolleranza"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Stampa di tolleranza"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</RelativeLayout>

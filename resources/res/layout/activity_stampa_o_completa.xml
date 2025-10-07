@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/body">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/stampaPreavviso"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:src="@drawable/stampa"
+                    style="@style/icon"/>
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:text="Stampa Accertamento"
+                    style="@style/text.icon"/>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/termpreav"
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:src="@drawable/verbale_compilazione"
+                    style="@style/icon"/>
+                <TextView
+                    android:textColor="@color/backgroundscuro"
+                    android:id="@+id/textView1"
+                    android:text="Completa Preavviso"
+                    style="@style/text.icon"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

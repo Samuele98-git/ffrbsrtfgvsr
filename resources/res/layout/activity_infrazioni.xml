@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/sfon2"
+    style="@style/root_layout">
+    <include layout="@layout/banner"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/body">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/verdeAcido"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounded_box"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/item_margin"
+            android:text="Seleziona le infrazioni"/>
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:id="@+id/txtRiepilogoInfrazioni"
+            android:background="@color/bluScuro_alpha"
+            android:padding="@dimen/item_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin"
+            android:layout_marginBottom="@dimen/item_margin"
+            android:hint="Nessuna infrazione selezionata"/>
+        <AutoCompleteTextView
+            android:textColor="@android:color/black"
+            android:id="@+id/txtFilterInfrazioni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci articolo e comma o la descrizione, per filtrare"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ico_cerca"
+            android:drawablePadding="10dp"
+            style="@style/text.label"/>
+        <ListView
+            android:id="@+id/listartcom"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

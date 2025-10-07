@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/sfon2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/banner"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/verdeAcido"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_box"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:text="Figure coinvolte"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/body">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                style="@style/icon">
+                <ImageView
+                    android:id="@+id/btnAggiungiFigura"
+                    android:src="@drawable/add_figure"
+                    style="@style/icon"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/lblDatamatrix"
+                android:text="Aggiungi figura"
+                style="@style/text.icon"/>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/listFigure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#f5f5f5"
+            android:dividerHeight="1dp"/>
+    </LinearLayout>
+</LinearLayout>
